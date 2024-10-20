@@ -61,7 +61,7 @@ const Navbar = () => {
       {link.title}
     </a>
     {link.submenu && (
-      <ul className="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<ul className="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-60 overflow-y-auto z-50">
         {link.submenu.map((item) => (
           <li key={item} className="px-4 py-2 hover:bg-gray-100">
             {item}
