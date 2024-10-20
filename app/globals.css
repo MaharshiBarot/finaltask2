@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar-dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  width: 12rem;
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000; /* Original z-index */
+}
+
+.navbar-item {
+  position: relative; /* Ensure relative positioning */
+}
+
+.navbar-item:hover .navbar-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-container {
+  overflow: visible; /* Ensure no overflow issues */
+}
+
+.navbar-dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-dropdown li:hover {
+  background-color: var(--light_grey);
+}
+
+.navbar-item:hover .navbar-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }

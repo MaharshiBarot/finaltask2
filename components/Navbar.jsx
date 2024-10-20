@@ -51,17 +51,26 @@ const Navbar = () => {
               isOpen ? "items-center justify-center text-center" : ""
             }`}
           >
-            {NAV_LINKS.map((link) => (
-              <li key={link.id} className="w-full">
-                <a
-                  href={`#${link.id}`}
-                  onClick={(e) => handleClick(e, link.id)}
-                  className="block py-2 px-3 text-gray-800 text-lg font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 whitespace-nowrap"
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))}
+{NAV_LINKS.map((link) => (
+  <li key={link.id} className="w-full relative group">
+    <a
+      href={`#${link.id}`}
+      onClick={(e) => handleClick(e, link.id)}
+      className="block py-2 px-3 text-gray-800 text-lg font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 whitespace-nowrap"
+    >
+      {link.title}
+    </a>
+    {link.submenu && (
+      <ul className="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {link.submenu.map((item) => (
+          <li key={item} className="px-4 py-2 hover:bg-gray-100">
+            {item}
+          </li>
+        ))}
+      </ul>
+    )}
+  </li>
+))}
           </ul>
         </div>
       </div>

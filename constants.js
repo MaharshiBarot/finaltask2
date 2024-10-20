@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
   { id: "about", title: "About US", url: "/#about" },
-  { id: "feature", title: "Core Values", url: "/#feature" },
-  { id: "services", title: "Services", url: "/#services" },
-  { id: "projects", title: "Projects", url: "/#projects" },
+{ id: "feature", title: "Core Values", url: "/#feature", submenu: ["Safety", "Integrity", "Innovation", "Collaboration", "Customer Focus"] },
+{ id: "services", title: "Services", url: "/#services", submenu: ["Process Engineering Services", "Process Safety Management", "Relief System Gap Analysis", "Mechanical and Piping Engineering Services", "Civil and Structural Engineering Services", "Project Management Consultancy"] },
+{ id: "projects", title: "Projects", url: "/#projects", submenu: ["Debutanizer Vacuum Prevention", "Third Process Gas Dryer", "Fractionator Debottleneck Study", "Elevated Flare Upgrade", "Dense Phase Ethane Energy Reduction", "Ethane Header Protection", "Sulfur Recovery Unit Upgrade", "Blowdown and Depressurization Analysis for Butamer Reactors", "Cycle Gas Cooling Water Upgrade"] },
 ];
 
 export const COMMUNITY_CARDS_INFO = [
