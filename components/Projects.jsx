@@ -3,6 +3,17 @@ import React, { useState } from "react";
 import { PROJECTS_INFO } from "@/constants";
 
 const Projects = () => {
+  const getProjectImage = (projectId) => {
+      switch (projectId) {
+          case 1:
+              return "/images/project1.jpg";
+          case 2:
+              return "/images/project2.jpg";
+          default:
+              return "/images/my-image.jpg";
+      }
+  };
+
   const ProjectItem = ({ project, isExpanded, onToggle }) => {
     return (
       <div
@@ -22,7 +33,12 @@ const Projects = () => {
                 <ul className="list-none space-y-4 text-gray-600 text-lg md:text-xl">
                   {project.text.description.map((desc, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="mr-3 text-green-500 w-6 h-6"> ➜ </span>
+                       <span className="mr-3 text-green-500 w-6 h-6"> ➜ </span>
+                       <img
+                            src={getProjectImage(project.id)}
+                           alt={project.name}
+                           className="absolute left-full ml-4 w-32 h-32 object-cover rounded-lg transition-opacity duration-300 opacity-0 hover:opacity-100"
+                       />
                       <span>{desc}</span>
                     </li>
                   ))}

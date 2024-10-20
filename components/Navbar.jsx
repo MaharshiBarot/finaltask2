@@ -6,6 +6,17 @@ import { NAV_LINKS } from "@/constants";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const getCoreValueImage = (coreValueId) => {
+      switch (coreValueId) {
+          case 1:
+              return "/images/corevalue1.jpg";
+          case 2:
+              return "/images/corevalue2.jpg";
+          default:
+              return "/images/my-image.jpg";
+      }
+  };
+
   const handleClick = (e, id) => {
     e.preventDefault();
     window.open(`/#${id}`, '_blank');
@@ -53,6 +64,11 @@ const Navbar = () => {
           >
 {NAV_LINKS.map((link) => (
   <li key={link.id} className="w-full relative group">
+    <img
+      src={getCoreValueImage(link.id)}
+      alt={link.title}
+      className="absolute left-full ml-4 w-32 h-32 object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+    />
     <a
       href={`#${link.id}`}
       onClick={(e) => handleClick(e, link.id)}
